@@ -27,6 +27,8 @@ public class EventStreamProcessor {
     public void streamTopology() {
         KStream<String, String> kStream = streamsBuilder.stream("input-topic",
                 Consumed.with(Serdes.String(), Serdes.String()));
+
+        // With only string
         // kStream
         //         .peek((key, value) -> System.out.println("Key :: " + key + "Value :: " + value))
         //         .to("output-topic", Produced.with(Serdes.String(), Serdes.String()));
